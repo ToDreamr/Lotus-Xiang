@@ -1,0 +1,35 @@
+  <view class="container">
+  <view class="slogan">
+        <text class="head">果树认养</text>
+        <view/>
+        <text class="bottom">缓解旅游淡季</text>
+  </view>
+    <block wx:for="{{taglist}}" wx:key="id">
+    <!-- 更多宝贝 -->
+    <view class='more-prod' wx:if="{{item.style==0}}">
+      <!-- <view class='title'>{{item.title}}</view> -->
+      <view class='prod-show'>
+        <block wx:for="{{item.prods}}" wx:for-item="prod" wx:key="prodId">
+          <view style="box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2); margin-top: 2%;border-radius: 2%;" class='show-item' bindtap='toProdPage' data-prodid="{{prod.prodId}}">
+            <view class='more-prod-pic'>
+              <image src='{{prod.pic}}' class='more-pic'></image>
+            </view>
+            <view class='prod-text-right'>
+              <view class='prod-text more'>{{prod.prodName}}</view>
+              <view class='prod-info'>{{prod.brief}}</view>
+              <view class='b-cart'>
+                <view class='price'>
+                  <text class='symbol'>￥</text>
+                  <text class='big-num'>499</text>
+                  <text class='small-num'>.8</text>
+                </view>
+                <!-- <view class='go-to-buy'>立即购买</view> -->
+                <text style="color: rgb(187, 114, 20);">进行中...</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>

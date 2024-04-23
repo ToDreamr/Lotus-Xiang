@@ -1,0 +1,11 @@
+<view class="container">
+  <scroll-view class="message-container" scroll-y="{{true}}" scroll-into-view="{{scrollIntoView}}">
+    <view wx:for="{{messages}}" wx:key="{{index}}" class="message-item">
+      <text class="message-text">{{item}}</text>
+    </view>
+  </scroll-view>
+  <view class="input-container">
+    <input class="input-box" bindinput="onInput" placeholder="请输入消息" value="{{inputValue}}" />
+    <button class="send-button" bindtap="onSend">发送</button>
+  </view>
+</view>

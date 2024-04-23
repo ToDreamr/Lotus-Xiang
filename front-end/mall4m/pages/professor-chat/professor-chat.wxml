@@ -1,0 +1,15 @@
+<view class="container">
+  <view style="text-align: center;font-family: 黑体; font-size: 20px; font-weight: 600;padding-bottom: 20px;">-对话框-</view>
+  <scroll-view class="message-container" scroll-y="{{true}}" scroll-into-view="{{scrollIntoView}}">
+    <view wx:for="{{messages}}" wx:key="{{index}}"  class="sayings">
+      <image class="avator" src='../../images/icon/tuiguang01.png'></image>
+      <view class="message-item">
+      <text class="message-text">{{item}}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="input-container">
+    <input class="input-box" bindinput="onInput" placeholder="" value="{{inputValue}}" />
+    <button class="send-button" bindtap="onSend">发送</button>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+.container {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 30rpx;
+}
+.input-container .input-box{
+  background-color: rgb(219, 230, 219);
+  width: 100%;
+  height: 50px;
+}
+.input-container .send-button{
+  background-color: rgb(60, 179, 216);
+  width: 20%;
+  height: 50px;
+}
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.sayings{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 8%;
+}
+.sayings .avator{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.sayings .message-item{
+  height: 30px;
+  background-color: green;
+  border-radius: 5%;
+  font-size: medium;
+  display: flex;
+  align-items: center;
+}
