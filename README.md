@@ -1,4 +1,6 @@
-湘连集市(**Lotus-xiang**)商城，是一个基于spring boot、spring oauth2.0、mybatis、redis的轻量级、
+# 湘莲集市(**Lotus-xiang**)商城
+
+本项目是一个基于spring boot、spring oauth2.0、mybatis、redis的轻量级、
 前后端分离、防范xss攻击、拥有分布式锁，为生产环境多实例完全准备，数据库为b2b2c设计，
 拥有完整sku和下单流程集合微信小程序的商城
 
