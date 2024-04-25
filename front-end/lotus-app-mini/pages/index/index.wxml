@@ -1,0 +1,89 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='content'>
+    <!-- swiper -->
+    <swiper autoplay="{{autoplay}}" indicator-color="{{indicatorColor}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{indicatorActiveColor}} " circular='true' class='pic-swiper' indicator-dots previous-margin='20rpx' next-margin='20rpx'>
+      <block wx:for='{{indexImgs}}' wx:key='imgUrl'>
+        <swiper-item class="banner-item">
+          <view class='img-box'>
+            <image src='{{item.imgUrl}}' data-prodid='{{item.relation}}' bindtap='toProdPage' class='banner'></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- end swiper -->
+
+     <view class='bg-sear'>
+      <view class="scrolltop">
+        <view class='section' bindtap='toSearchPage'>
+          <text class='placeholder'>搜索农产品</text>
+          <image src='../../images/icon/search.png' class='search-img'></image>
+        </view>
+      </view>
+    </view>
+    <view class='cat-item'>
+      <view style="border-right: 2rpx solid #b6b1b1;" class='item' bindtap='toClassifyPage' data-sts="1">
+        <!-- <image src='../../images/icon/newProd.png'></image> -->
+        <text   class='item-text'>在线购物</text>
+      </view>
+      <view  style="border-right: 2rpx solid #b6b1b1;" class='item' bindtap='toLimitedTimeOffer' data-sts="2">
+        <!-- <image src='../../images/icon/timePrice.png'></image> -->
+        <text    class='item-text'>认养一棵树</text>
+      </view>
+      <view class='item'  style="border-right: 2rpx solid #b6b1b1;" bindtap='toClassifyPage' data-sts="3">
+        <!-- <image src='../../images/icon/neweveryday.png'></image> -->
+        <text  class='item-text'>专家一对一</text>
+      </view>
+      <view class='item' bindtap='toMoreInfo'>
+        <!-- <image src='../../images/icon/newprods.png'></image> -->
+        <text class='item-text'>更多</text>
+      </view>
+    </view>
+
+    <!-- 消息播放 -->
+    <view class='message-play' bindtap='onNewsPage'>
+      <image src='../../images/icon/horn.png' class='hornpng'></image>
+      <swiper vertical='true' autoplay='true' duration='1000' class='swiper-cont'>
+        <block wx:for='{{news}}' wx:key='id'>
+          <swiper-item class="items">{{item.title}}</swiper-item>
+        </block>
+      </swiper>
+      <text class='arrow'></text>
+    </view>
+    <view class="slogan">
+      <text class="head">热卖产品</text>
+      <view/>
+      <text class="bottom">促进农业发展</text>
+    </view>
+  </view>
+
+  <block wx:for="{{taglist}}" wx:key="id">
+    <!-- 更多宝贝 -->
+    <view class='more-prod' wx:if="{{item.style==0}}">
+      <!-- <view class='title'>{{item.title}}</view> -->
+      <view class='prod-show'>
+        <block wx:for="{{item.prods}}" wx:for-item="prod" wx:key="prodId">
+          <view style="box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2); margin-top: 2%;border-radius: 2%;" class='show-item' bindtap='toProdPage' data-prodid="{{prod.prodId}}">
+            <view class='more-prod-pic'>
+              <image src='{{prod.pic}}' class='more-pic'></image>
+            </view>
+            <view class='prod-text-right'>
+              <view class='prod-text more'>{{prod.prodName}}</view>
+              <view class='prod-info'>{{prod.brief}}</view>
+              <view class='b-cart'>
+                <view class='price'>
+                  <text class='symbol'>￥</text>
+                  <text class='big-num'>{{wxs.parsePrice(prod.price)[0]}}</text>
+                  <text class='small-num'>.{{wxs.parsePrice(prod.price)[1]}}</text>
+                </view>
+                <!-- <view class='go-to-buy'>立即购买</view> -->
+                <image src='../../images/tabbar/basket-sel.png' class='basket-img' data-prodid="{{prod.prodId}}" catchtap="addToCart"></image>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>
+<wxs module="wxs" src="../../wxs/number.wxs" />

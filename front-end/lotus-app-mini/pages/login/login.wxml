@@ -1,0 +1,29 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+<image src='http://sceazcbtu.hn-bkt.clouddn.com/2024/04/ece4fd180d714230be5bfcd21e24414c.jpg' class='c-logo'></image>
+<view class="title">湘莲集市</view>
+<view class="login-form">
+    <view class="item">
+        <view class="account">
+            <text class="input-item">用户名</text>
+            <input type="text" data-type="account" placeholder-class="inp-palcehoder" value="{{userName}}" placeholder="请输入用户名" bindinput="getInputVal"></input>
+        </view>
+        <!-- 在线购物 -->
+    </view>
+    <view class="item">
+        <view class="account">
+            <text class="input-item">密码</text>
+            <input type="password" data-type="password" placeholder-class="inp-palcehoder" value="{{password}}" placeholder="请输入密码" bindinput="getInputVal"></input>
+        </view>
+    </view>
+    <view>
+        <button class="authorized-btn" bindtap="handleLoginOrRegister">{{isRegister ? '注册': '登录'}}</button>
+        <button class="to-idx-btn" bindtap="goBack">回到首页</button>
+    </view>
+    <view class="operate">
+        <view class="to-register" bindtap="handleChangeShowType">
+            {{isRegister?'已有账号？去登录>' : '没有账号？去注册>'}}
+        </view>
+    </view>
+</view>
+</view>

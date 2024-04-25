@@ -3,18 +3,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.yami.shop</groupId>
-    <artifactId>mall4m-backend</artifactId>
+    <artifactId>lotus-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>yami-shop-admin</module>
-        <module>yami-shop-sys</module>
-        <module>yami-shop-common</module>
-        <module>yami-shop-api</module>
-        <module>yami-shop-bean</module>
-        <module>yami-shop-service</module>
-        <module>yami-shop-security</module>
+        <module>lotus-admin-app</module>
+        <module>lotus-web-sys</module>
+        <module>lotus-web-common</module>
+        <module>lotus-user-app</module>
+        <module>lotus-web-bean</module>
+        <module>lotus-web-mapper</module>
+        <module>lotus-web-security</module>
     </modules>
 
     <properties>
