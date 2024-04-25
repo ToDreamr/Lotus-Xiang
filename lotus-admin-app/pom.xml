@@ -5,7 +5,7 @@
 
     <parent>
         <groupId>com.yami.shop</groupId>
-        <artifactId>lotus-app</artifactId>
+        <artifactId>lotus-xiang</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
